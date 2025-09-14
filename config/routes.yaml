@@ -4,5 +4,6 @@ controllers:
         namespace: App\Controller
     type: attribute
 productDirectory:
-    path: /
+    path: /product-directoy/products
+    methods: GET|HEAD
     controller: App\Controller\ProductDirectoryController::index
