@@ -3,21 +3,21 @@
 namespace App\Entity;
 
 use App\Repository\ProductDirectoryRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProductDirectoryRepository::class)]
+#[ORM\Table(name: 'ProductsDirectory')]
 class ProductDirectory
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
-    #[ORM\Column]
+    #[ORM\Column( type: 'integer', name: 'Id', nullable: false,)]
     private ?int $id = null;
 
-    #[ORM\Column]
-    private ?int $ProductDirectoryId = null;
-
     #[ORM\Column(length: 36)]
-    private ?string $ProductDirectoryUUID = null;
+    private ?string $ProductDirectoryId = null;
 
     #[ORM\Column(length: 255)]
     private ?string $Name = null;
@@ -36,32 +36,43 @@ class ProductDirectory
 
     #[ORM\Column]
     private ?\DateTime $UpdatedAt = null;
+    #[ORM\OneToMany(mappedBy: 'productDirectory', targetEntity: ProductDirectoryDetail::class, cascade: ['persist'], orphanRemoval: true)]
+    private Collection $details;
 
+    public function getDetails(): Collection
+    {
+        return $this->details;
+    }
+
+    public function setDetails(Collection $details): void
+    {
+        $this->details = $details;
+    }
+
+    public function __construct()
+    {
+        $this->details = new ArrayCollection();
+    }
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getProductDirectoryId(): ?int
+    public function setId(int $id): static
     {
-        return $this->ProductDirectoryId;
-    }
-
-    public function setProductDirectoryId(int $ProductDirectoryId): static
-    {
-        $this->ProductDirectoryId = $ProductDirectoryId;
+        $this->id = $id;
 
         return $this;
     }
 
-    public function getProductDirectoryUUID(): ?string
+    public function getProductDirectoryId(): ?string
     {
-        return $this->ProductDirectoryUUID;
+        return $this->ProductDirectoryId;
     }
 
-    public function setProductDirectoryUUID(string $ProductDirectoryUUID): static
+    public function setProductDirectoryId(string $ProductDirectoryId): static
     {
-        $this->ProductDirectoryUUID = $ProductDirectoryUUID;
+        $this->ProductDirectoryId = $ProductDirectoryId;
 
         return $this;
     }

@@ -1,0 +1,3 @@
+<?php // dev.encrypt.public on Sun, 14 Sep 2025 20:46:38 +0000
+
+return "\xC8\xC56\x80.\x8A\xE5S\x07W\x1A\x9B\x229\xD72VUF\xC9IX\xE6\x18_\x922\x22\xD9X\xA2i";
