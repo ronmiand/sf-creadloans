@@ -25,7 +25,7 @@ doctrine:
         charset:              utf8mb4
         logging:              '%kernel.debug%'
         #platform_service:     App\DBAL\MyDatabasePlatformService
-        #server_version:       '8.0.39'
+        server_version:       '8.0.39'
         mapping_types:
           enum: string
         #types:
