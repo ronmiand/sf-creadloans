@@ -5,7 +5,7 @@ doctrine:
     connections:
       default:
         dbname:               nubehive_CredLoans
-        host:                 127.0.0.1
+        host:                 localhost
         port:                 3306
         user:                 '%env(resolve:DATABASE_USER)%'
         password:             '%env(resolve:DATABASE_PASSWORD)%'
