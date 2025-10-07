@@ -6,7 +6,7 @@ doctrine:
       default:
         dbname:               nubehive_CredLoans
         host:                 127.0.0.1
-        port:                 33060
+        port:                 3306
         user:                 '%env(resolve:DATABASE_USER)%'
         password:             '%env(resolve:DATABASE_PASSWORD)%'
         driver:               pdo_mysql
