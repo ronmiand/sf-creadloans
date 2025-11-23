@@ -5,7 +5,7 @@ doctrine:
     connections:
       default:
         dbname:               nubehive_CredLoans
-        host:                 localhost
+        host:                 127.0.0.1
         port:                 3306
         user:                 '%env(resolve:DATABASE_USER)%'
         password:             '%env(resolve:DATABASE_PASSWORD)%'
@@ -15,11 +15,6 @@ doctrine:
         # the DBAL driverClass option
         #driver_class:         App\DBAL\MyDatabaseDriver
         # the DBAL driverOptions option
-        options:
-          foo: bar
-        path:                 '%kernel.project_dir%/var/data/data.sqlite'
-        memory:               true
-        unix_socket:          /tmp/mysql.sock
         # the DBAL wrapperClass option
         #wrapper_class:        App\DBAL\MyConnectionWrapper
         charset:              utf8mb4
