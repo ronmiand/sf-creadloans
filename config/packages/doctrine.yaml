@@ -7,8 +7,8 @@ doctrine:
         dbname: nubehive_CredLoans
         host: 127.0.0.1
         port: 3306
-        user: '%env(resolve:DATABASE_USER)%'
-        password: '%env(resolve:DATABASE_PASSWORD)%'
+        user: '%env(DATABASE_USER)%'
+        password: '%env(DATABASE_PASSWORD)%'
         driver: pdo_mysql
         # if the url option is specified, it will override the above config
         #url:                  mysql://db_user:db_password@127.0.0.1:3306/db_name
